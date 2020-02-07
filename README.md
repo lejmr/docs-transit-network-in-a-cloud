@@ -27,5 +27,6 @@ Create TGW connections
 * Transit gateway allows static routing across regions - how to deal with it
     * AWS Lambda using labels - is there any already existing solution?
 * Can we set priority to static routes over peering connections? How overlapping routes are behaving?    
+* How works propagation of routes through VPN down to Customer gateway?
     
     
