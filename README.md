@@ -2,7 +2,20 @@ _This is a work in progress_
 
 # Example of Inter-region transition gateway peering
 
-This repository is just a time capsule trying to catch information about building transit gateway onto one place. The goal is to deliver inter-region communication among VPCs.
+This repository is just a time capsule of my tryings to catch information about building transit gateway onto one place. The goal of my trying is to deliver an inter-region communication among VPCs. Ideally, among multiple clouds. Thesedays, the main cloud I am using is Amazon AWS, but I would like to extend my knowledge to other clouds as well.
+
+![High level diagram](files/10000feets.png)
+
+All the tryies will be implemented using [Terraform](https://www.terraform.io/) while the motivation for Terraform is to keep the implementation cloud agnostic as much as possible.
+
+# Amazon AWS - Transit gateway
+
+Amazon AWS delivers [Transit gateway](https://aws.amazon.com/transit-gateway/) as they in-house building block. In the past there has been a plethora implementations and even AWS white papers. All these reference implementations were based on 3rd party technologies implementing the control plane while data plane was AWS VPN, i.e., pair of IPsec tunnels. I am not covering more of this legacy architecture, as the goal of this document is to review AWS branded technology, and propose an architecture based on AWS components. 
+
+AWS TGW allow connection of a number of VPCs within the same regio
+
+
+
 
 ![High level diagram](files/tgw-inter-region-peering-example.png)
 
