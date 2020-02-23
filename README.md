@@ -23,14 +23,19 @@ terraform apply
 Create TGW connections
 
 # Challenges / Contributions welcomed / Information
-* All .png files are created using Draw.io, so feel free to modify them locally. 
-* Transit gateway allows static routing across regions - how to deal with it
+- All .png files are created using Draw.io, so feel free to modify them locally.
+- [Transit gateway allows static routing across regions - how to deal with it](#transit-gateway-allows-static-routing-across-regions---how-to-deal-with-it)
+- [Can we set priority to static routes over peering connections? How overlapping routes are behaving?](#can-we-set-priority-to-static-routes-over-peering-connections--how-overlapping-routes-are-behaving-)
+- [How works propagation of routes through VPN down to Customer gateway?](#how-works-propagation-of-routes-through-vpn-down-to-customer-gateway-)
+- [How much cost 10GB between regions?](#how-much-cost-10gb-between-regions-)
+
+
+
+## All .png files are created using Draw.io, so feel free to modify them locally. 
+## Transit gateway allows static routing across regions - how to deal with it
     * AWS Lambda using labels - is there any already existing solution?
-* Can we set priority to static routes over peering connections? How overlapping routes are behaving?    
-* How works propagation of routes through VPN down to Customer gateway?
-* How much cost 10GB between regions?
-    
-    
+## Can we set priority to static routes over peering connections? How overlapping routes are behaving?    
+## How works propagation of routes through VPN down to Customer gateway?
 ## How much cost 10GB between regions?
 
 In order to find the right answer, i.e., how much money is actually charged, three basic scenarios are build, so the cost can be compored hence one could deduce what is hidden behind explanation on Amazon AWS documentation pages.
