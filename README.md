@@ -10,11 +10,9 @@ All the tryies will be implemented using [Terraform](https://www.terraform.io/) 
 
 # Amazon AWS - Transit gateway
 
-Amazon AWS delivers [Transit gateway](https://aws.amazon.com/transit-gateway/) as they in-house building block. In the past there has been a plethora implementations and even AWS white papers. All these reference implementations were based on 3rd party technologies implementing the control plane while data plane was AWS VPN, i.e., pair of IPsec tunnels. I am not covering more of this legacy architecture, as the goal of this document is to review AWS branded technology, and propose an architecture based on AWS components. 
+Amazon AWS delivers [Transit gateway](https://aws.amazon.com/transit-gateway/) as an in-house building block. In the past there has been a plethora implementations and even AWS white papers on these 3rd party components. All these reference implementations were implementing the control plane while data plane was AWS VPN, i.e., pair of IPsec tunnels. I am not covering more of these legacy architecture, as the goal of this document is to review AWS branded technology, and propose an architecture based on AWS components. Additionall, I wont try to implement any final solution. I only plan to show foundation moving parts and show how they work. I believe the glue code can implement anybodu using cloud specific languages, e.g., AWS Lambda.
 
-AWS TGW allow connection of a number of VPCs within the same regio
-
-
+AWS TGW allows connecting a number of VPCs within the same regio, so that the communication is controlled by routing tables, security groups, and network access control lists. VPCs are interconnected using TGW attachements which can be standard TGW attachement, VPN attachement, or peering attachement.
 
 
 ![High level diagram](files/tgw-inter-region-peering-example.png)
