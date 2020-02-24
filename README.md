@@ -110,6 +110,35 @@ Connecting to host 10.2.101.207, port 5201
 iperf Done.
 ```
 
+```
+ubuntu@ip-10-1-101-116:~$ iperf3 -n 10240M -c 10.11.101.129
+Connecting to host 10.11.101.129, port 5201
+[  4] local 10.1.101.116 port 43730 connected to 10.11.101.129 port 5201
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  12.5 MBytes   105 Mbits/sec   58   1.22 MBytes
+[  4]   1.00-2.00   sec  16.0 MBytes   134 Mbits/sec   17   1006 KBytes
+[  4]   2.00-3.00   sec  14.4 MBytes   121 Mbits/sec    0   1.09 MBytes
+[  4]   3.00-4.00   sec  15.4 MBytes   129 Mbits/sec    0   1.13 MBytes
+[  4]   4.00-5.00   sec  15.8 MBytes   133 Mbits/sec    0   1.14 MBytes
+[  4]   5.00-6.00   sec  15.9 MBytes   133 Mbits/sec    0   1.18 MBytes
+[  4]   6.00-7.00   sec  16.9 MBytes   141 Mbits/sec    0   1.24 MBytes
+[  4]   7.00-8.00   sec  17.7 MBytes   148 Mbits/sec    0   1.31 MBytes
+...
+[  4] 479.00-480.00 sec  17.0 MBytes   143 Mbits/sec    0   1.18 MBytes
+[  4] 480.00-481.00 sec  16.9 MBytes   142 Mbits/sec    0   1.25 MBytes
+[  4] 481.00-482.00 sec  17.5 MBytes   147 Mbits/sec    0   1.27 MBytes
+[  4] 482.00-483.00 sec  17.7 MBytes   149 Mbits/sec    0   1.28 MBytes
+[  4] 483.00-484.00 sec  18.2 MBytes   153 Mbits/sec    0   1.34 MBytes
+[  4] 484.00-485.00 sec  19.0 MBytes   159 Mbits/sec    0   1.40 MBytes
+[  4] 485.00-486.00 sec  20.0 MBytes   167 Mbits/sec    0   1.46 MBytes
+[  4] 486.00-486.31 sec  6.25 MBytes   167 Mbits/sec    0   1.47 MBytes
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-486.31 sec  10.0 GBytes   177 Mbits/sec  2985             sender
+[  4]   0.00-486.31 sec  10.0 GBytes   177 Mbits/sec                  receiver
+
+iperf Done.
+```
 
 ### Case B)
 
