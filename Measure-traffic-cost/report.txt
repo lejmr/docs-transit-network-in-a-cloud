@@ -1,0 +1,90 @@
+# Case 1) Peering within a region vpc1 (server) <- vpc2 (client
+
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-93.50  sec  10.0 GBytes   919 Mbits/sec  1063             sender
+[  4]   0.00-93.50  sec  10.0 GBytes   919 Mbits/sec                  receiver
+
+
+# Case 2) Peering inter-regions (eu-north-1, eu-west-3) vpc1 (server) <- vpc2 (client)
+
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-203.56 sec  10.0 GBytes   422 Mbits/sec  450             sender
+[  4]   0.00-203.56 sec  10.0 GBytes   422 Mbits/sec                  receiver
+
+vpc1:
+ens5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 10.1.101.31  netmask 255.255.255.0  broadcast 10.1.101.255
+        inet6 fe80::4b5:d8ff:fee8:cfd0  prefixlen 64  scopeid 0x20<link>
+        ether 06:b5:d8:e8:cf:d0  txqueuelen 1000  (Ethernet)
+        RX packets 799644  bytes 71493155 (71.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7421910  bytes 11227911217 (11.2 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+vpc2:
+ens5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 10.1.101.31  netmask 255.255.255.0  broadcast 10.1.101.255
+        inet6 fe80::4b5:d8ff:fee8:cfd0  prefixlen 64  scopeid 0x20<link>
+        ether 06:b5:d8:e8:cf:d0  txqueuelen 1000  (Ethernet)
+        RX packets 799644  bytes 71493155 (71.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7421910  bytes 11227911217 (11.2 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+# Case 3) TGW intra-region (us-west-1) vpc1 (server) <- vpc2 (client)
+
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-62.13  sec  10.0 GBytes  1.38 Gbits/sec  203             sender
+[  4]   0.00-62.13  sec  10.0 GBytes  1.38 Gbits/sec                  receiver
+
+vpc1:
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 10.0.101.200  netmask 255.255.255.0  broadcast 10.0.101.255
+        inet6 fe80::4e1:ddff:fec8:8ebe  prefixlen 64  scopeid 0x20<link>
+        ether 06:e1:dd:c8:8e:be  txqueuelen 1000  (Ethernet)
+        RX packets 1284846  bytes 10821118178 (10.8 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 603770  bytes 40105425 (40.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+vpc2:
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 10.1.101.39  netmask 255.255.255.0  broadcast 10.1.101.255
+        inet6 fe80::4c0:e0ff:fe30:20b0  prefixlen 64  scopeid 0x20<link>
+        ether 06:c0:e0:30:20:b0  txqueuelen 1000  (Ethernet)
+        RX packets 614374  bytes 50833417 (50.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 198396  bytes 10755367202 (10.7 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+# Case 4) TGW inter-region (us-east-1, us-east-2) vpc1 (server) <- vpc2 (client)
+
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-62.13  sec  10.0 GBytes  1.38 Gbits/sec  203             sender
+[  4]   0.00-62.13  sec  10.0 GBytes  1.38 Gbits/sec                  receiver
+
+vpc1:
+ens5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 10.0.101.23  netmask 255.255.255.0  broadcast 10.0.101.255
+        inet6 fe80::1076:2ff:fe65:a753  prefixlen 64  scopeid 0x20<link>
+        ether 12:76:02:65:a7:53  txqueuelen 1000  (Ethernet)
+        RX packets 1286704  bytes 10841451936 (10.8 GB)
+        RX errors 0  dropped 22  overruns 0  frame 0
+        TX packets 531304  bytes 35173852 (35.1 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+vpc2:
+ens5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 10.1.101.20  netmask 255.255.255.0  broadcast 10.1.101.255
+        inet6 fe80::85:88ff:fea2:68f4  prefixlen 64  scopeid 0x20<link>
+        ether 02:85:88:a2:68:f4  txqueuelen 1000  (Ethernet)
+        RX packets 542629  bytes 54562350 (54.5 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1275077  bytes 10823533481 (10.8 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
